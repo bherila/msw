@@ -1,0 +1,16 @@
+( function($) {
+
+    $(window).scroll(function () {
+        var scrollDistance = $(window).scrollTop() - $('.child-pages-container').offset().top + 100;
+
+        // Assign active class to nav links while scolling
+        $('.child-page-content').each(function (i) {
+            if ($(this).position().top <= scrollDistance) {
+                $('.child-pages-menu .menu-item a.elementor-item-active').removeClass('elementor-item-active');
+                $('.child-pages-menu .menu-item').eq(i).find('a').addClass('elementor-item-active');
+            }
+        });
+    }).scroll();
+
+})
+(jQuery);
